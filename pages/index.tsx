@@ -1,14 +1,16 @@
-import Head from 'next/head'
-import styled from 'styled-components';
+import Header from '../components/Header'
+import {
+  Row, Col
+} from 'reactstrap'
 
-export default function Home() {
+export default () => {
   return (
-    <div>
-      <Title>My First Next.js Page</Title>
-    </div>
+    <>
+      <Row className='justify-content-center'>
+          <Col md='7'>
+            <Header />
+          </Col>
+      </Row>
+    </>
   )
 }
-
-const Title = styled.h1`
-  color: red;
-`;

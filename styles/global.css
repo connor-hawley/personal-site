@@ -5,20 +5,25 @@ body {
   font-family: garibaldi, alegreya, palatino, serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.6;
-  font-size: 20px;
+  font-size: 18px;
+  /*  from theme */
+  background: #FFFBFB;
+  color: #1C1C1C;
 }
 
 * {
   box-sizing: border-box;
 }
 
+/*  from theme */
 a {
-  color: #0070f3;
+  color: #2E2E2E;
   text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
+  color: #6D9BC3;
+  text-decoration: none;
 }
 
 img {

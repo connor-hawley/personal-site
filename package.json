@@ -5,10 +5,11 @@
   "author": "Connor Hawley <connor.hawley4@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "bootstrap": "^4.5.0",
     "next": "^9.4.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "rebass": "^4.0.7",
+    "reactstrap": "^8.4.1",
     "styled-components": "^5.1.1"
   },
   "scripts": {
