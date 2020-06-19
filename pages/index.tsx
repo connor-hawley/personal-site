@@ -1,16 +1,19 @@
 import Header from '../components/Header'
-import {
-  Row, Col
-} from 'reactstrap'
+import About from '../components/About'
+import { Box, Flex } from 'rebass' 
 
 export default () => {
   return (
     <>
-      <Row className='justify-content-center'>
-          <Col md='7'>
-            <Header />
-          </Col>
-      </Row>
+      <Flex 
+        justifyContent='center'>
+        <Box 
+          width={[1/2, 1, 1/2]}
+          px={2}>
+          <Header />
+          <About />
+        </Box>
+      </Flex>
     </>
   )
 }

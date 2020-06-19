@@ -1,13 +1,14 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/global.css'
-import Theme from '../styles/theme'
+import theme from '../styles/Theme'
+import { ThemeProvider } from 'emotion-theming'
 import { AppProps } from 'next/app'
-import { ThemeProvider } from 'styled-components'
+
+import GlobalStyle from '../styles/Global'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider theme={Theme}>
+    <ThemeProvider theme={theme}>
       <Component {...pageProps} />
+      <GlobalStyle theme={theme} />
     </ThemeProvider>
   )
 }
