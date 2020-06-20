@@ -1,19 +1,38 @@
-import Header from '../components/Header'
-import About from '../components/About'
-import { Box, Flex } from 'rebass' 
+import SiteLayout from '../components/SiteLayout'
+import ContentHeader from '../components/ContentHeader'
+import ContentText from '../components/ContentText'
+
+const openingLines = [
+  'Hi, I\'m Connor Hawley',
+  'Thanks for visiting my site!',
+  'This digital space is where I release my thoughts into the world.',
+  'I\'ve recently been interested in: software design, distributed systems, statistics, and meta-learning.',
+]
 
 export default () => {
+  const contents = openingLines.map((line, idx) => {
+    if (idx === 0) {
+      return (
+        <ContentHeader
+          key={idx}
+        >
+          {line}
+        </ContentHeader>
+      );
+    } else {
+      return (
+        <ContentText
+          key={idx}
+        >
+          {line}
+        </ContentText>
+      )
+    }
+  })
+
   return (
-    <>
-      <Flex 
-        justifyContent='center'>
-        <Box 
-          width={[1/2, 1, 1/2]}
-          px={2}>
-          <Header />
-          <About />
-        </Box>
-      </Flex>
-    </>
+    <SiteLayout>
+      {contents}
+    </SiteLayout>
   )
 }

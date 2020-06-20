@@ -2,11 +2,11 @@
 const theme = {
   breakpoints: ['40em', '52em', '64em'], // mobile, tablet, laptop
   fontSizes: [
-    12, 14, 16, 20, 24, 32, 48, 64
+    12, 14, 16, 18, 20, 24, 32, 48, 64
   ],
   colors: {
     text_primary: '#1C1C1C',
-    link_primary: '#BEBEBE',
+    link_primary: '#6D9BC3',
     highlight_primary: '#6D9BC3',
     background_primary: '#FFFBFB',
     background_secondary: '#F4E7EC',
@@ -23,9 +23,6 @@ const theme = {
     bright_gray: '#EBECF0',
     gray: '#BEBEBE',
     white: '#FFFFFF'
-  },
-  border: {
-    primary: '.1em solid'
   },
   space: [
     0, 4, 8, 16, 32, 64, 128, 256
@@ -50,7 +47,6 @@ const theme = {
   }
 }
 
-type ThemeType = typeof theme
+export type ThemeType = typeof theme
 
-export { ThemeType }
 export default theme
