@@ -1,12 +1,12 @@
-import { Box, Flex, Text } from 'rebass'
+import { Flex } from 'rebass'
 import { GetStaticProps } from 'next'
-import Link from 'next/link'
 
 import { getSortedPostsData } from '../lib/posts'
 import SiteLayout from '../components/SiteLayout'
 import ContentHeader from '../components/ContentHeader'
 import PostCard from '../components/PostCard'
-import Post from './blog/[id]';
+import Divider from '../components/Divider'
+
 
 interface AllPostsDataType {
   allPostsData: {
@@ -26,14 +26,9 @@ export default ({ allPostsData }: AllPostsDataType) => {
 
   return (
     <SiteLayout>
-      <Flex
-        justifyContent='center'
-        flexDirection='column'
-      >
-        <ContentHeader>Posts</ContentHeader>
-        {AllPostCards}
-      </Flex>
-
+      <ContentHeader>Posts</ContentHeader>
+      <Divider />
+      {AllPostCards}
     </SiteLayout>
   )
 }

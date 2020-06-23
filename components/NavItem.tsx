@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Box, Text } from 'rebass'
-import Link from 'next/link'
+// import Link from 'next/link'
+import Link from './StyledLink'
 
 interface NavItemProps {
   link: string,
@@ -19,13 +20,10 @@ export default ({ link, text }: NavItemProps) => {
       p={[1, 3]}
     >
       {link !== currentPath ? (
-        <Link
+        <Link 
           href={link}
-        >
-          <a>
-            {text}
-          </a>
-        </Link>
+          text={text}
+        />
       ) : (
         <Text
           fontWeight='bold'

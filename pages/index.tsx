@@ -2,12 +2,7 @@ import SiteLayout from '../components/SiteLayout'
 import ContentHeader from '../components/ContentHeader'
 import ContentText from '../components/ContentText'
 
-const openingLines = [
-  'Hi, I\'m Connor Hawley',
-  'Thanks for visiting my site!',
-  'This digital space is where I release my thoughts into the world.',
-  'I\'ve recently been interested in: software design, distributed systems, statistics, and meta-learning.',
-]
+import { openingLines } from '../content/text'
 
 export default () => {
   const contents = openingLines.map((line, idx) => {

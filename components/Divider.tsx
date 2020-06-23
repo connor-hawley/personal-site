@@ -1,10 +1,15 @@
 import { Box } from 'rebass'
 
-export default () => (
+interface DividerProps {
+  isLink?: boolean
+}
+
+export default ({ isLink=false }: DividerProps) => (
   <Box
     sx={{
-      'borderStyle': 'solid',
-      'borderWidth': '0px 0px 1px 0px'
+      'borderBottomColor': `${isLink ? 'highlight_primary' : 'text_primary'}`,
+      'borderBottomStyle': 'solid',
+      'borderBottomWidth': '1px'
     }}
   />
 )

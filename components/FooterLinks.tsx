@@ -20,7 +20,12 @@ const links = [
 ]
 
 export default props => {
-  const linkComponents = links.map((link, idx) => <FooterLink {...link} />)
+  const linkComponents = links.map((link, idx) => (
+    <FooterLink 
+      key={idx}
+      {...link} 
+    />
+  ))
 
   return (
     <Flex
