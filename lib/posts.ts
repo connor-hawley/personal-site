@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import remark from 'remark'
-import html from 'remark-html'
+// import html from 'remark-html'
 
 const postsDirectory = path.join(process.cwd(), 'content/posts')
 
@@ -54,16 +54,15 @@ export async function getPostData(id: string) {
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents)
 
-  // Use remark to convert markdown into HTML string
+  // Use remark to process markdown content as a string
   const processedContent = await remark()
-    .use(html)
     .process(matterResult.content)
-  const contentHtml = processedContent.toString()
+  const content = processedContent.toString()
 
   // Combine the data with the id and contentHtml
   return {
     id,
-    contentHtml,
+    content,
     ...(matterResult.data as { date: string; title: string })
   }
 }

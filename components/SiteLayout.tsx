@@ -8,10 +8,14 @@ import Footer from './Footer'
 export default props => (
   <SiteContainer>
     <Navbar />
-    <ContentContainer
-      {...props}
-    />
+    <main>
+      <ContentContainer
+        {...props}
+      />
+    </main>
     <Box my='auto' />
-    <Footer />
+    <footer>
+      <Footer />
+    </footer>
   </SiteContainer>
 )

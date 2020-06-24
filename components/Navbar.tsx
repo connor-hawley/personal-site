@@ -25,7 +25,7 @@ export default () => {
   })
 
   return (
-    <>
+    <nav>
       <Flex
         px={2}
         alignItems={['flex-start', 'center']}
@@ -40,6 +40,6 @@ export default () => {
         {NavItems}
       </Flex>
       <Divider />
-    </>
+    </nav>
   )
 }

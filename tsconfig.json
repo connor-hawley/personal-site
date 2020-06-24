@@ -24,6 +24,6 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx", "components/StyledLink.tsx"
+    "**/*.tsx", "components/StyledLink.tsx", "next.config.js"
   ]
 }

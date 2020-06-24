@@ -31,6 +31,18 @@ const globalStyle = createGlobalStyle<{ theme: ThemeType }>`
     max-width: 100%;
     display: block;
   }
+
+  table, th, td {
+    border: 1px solid ${({ theme }) => theme.colors.text_primary};
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: ${({ theme }) => theme.space[2]}px;
+  }
+
+  .blog-post {
+  }
 `
 
 export default globalStyle

@@ -34,6 +34,7 @@ export default ({href, as, text, anchorOnly=false}: StyledLinkProps) => {
           ref={targetRef}
           onMouseEnter={() => setUnderlined(!isUnderlined)}
           onMouseLeave={() => setUnderlined(!isUnderlined)}
+          target='_blank'
         >
           {text}
         </a>
