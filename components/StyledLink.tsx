@@ -4,15 +4,15 @@ import { useSpring, animated } from 'react-spring'
 
 import Divider from './Divider'
 
-interface StyledLinkProps {
+type StyledLinkProps = {
   href: string,
   as?: string,
   text: string | React.ReactNode,
-  anchorOnly?: boolean
+  anchorOnly?: boolean,
+  isAnimated?: boolean
 }
 
-export default ({href, as, text, anchorOnly=false}: StyledLinkProps) => {
-// export default props => {
+export default ({href, as, text, anchorOnly=false, isAnimated=true}: StyledLinkProps) => {
 
   const targetRef = useRef<HTMLAnchorElement>(null);
   const [width, setWidth] = useState(0);
@@ -34,29 +34,26 @@ export default ({href, as, text, anchorOnly=false}: StyledLinkProps) => {
           ref={targetRef}
           onMouseEnter={() => setUnderlined(!isUnderlined)}
           onMouseLeave={() => setUnderlined(!isUnderlined)}
-          target='_blank'
+          target="_blank"
         >
           {text}
         </a>
       ) : (
-        <Link
-          href = {href}
-          as = {as}
-        >
+        <Link href={href} as={as}>
           <a
-            ref = {targetRef}
-            onMouseEnter = { () => setUnderlined(!isUnderlined) }
-            onMouseLeave = { () => setUnderlined(!isUnderlined) }
+            ref={targetRef}
+            onMouseEnter={() => setUnderlined(!isUnderlined)}
+            onMouseLeave={() => setUnderlined(!isUnderlined)}
           >
-            { text }
+            {text}
           </a>
         </Link>
       )}
-      <animated.div style={linkSpring}>
-        <Divider
-          isLink={true}
-        />
-      </animated.div>
+      {isAnimated ? (
+        <animated.div style={linkSpring}>
+          <Divider isLink={true} />
+        </animated.div>
+      ) : <></>}
     </>
-  )
+  );
 }

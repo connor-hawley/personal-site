@@ -1,13 +1,13 @@
 import Head from 'next/head'
 import { GetStaticProps, GetStaticPaths } from 'next'
-import ReactMarkdown from 'react-markdown'
 
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import SiteLayout from '../../components/SiteLayout'
 import ContentHeader from '../../components/ContentHeader'
 import ContentDate from '../../components/ContentDate'
 import Divider from '../../components/Divider'
-import { codeRenderer, textRenderer, linkRenderer } from '../../lib/renderers'
+import MarkdownRenderer from '../../components/MarkdownRenderer'
+import ShareLinks from '../../components/ShareLinks'
 
 interface PostDataType {
   postData: {
@@ -18,9 +18,6 @@ interface PostDataType {
 }
 
 export default function Post({ postData }: PostDataType) {
-  const transformImageUri = (uri: string) => (
-    uri.startsWith("http") ? uri : `${process.env.REACT_IMAGE_BASE_URL}${uri}`
-  )
 
   return (
     <SiteLayout>
@@ -33,17 +30,11 @@ export default function Post({ postData }: PostDataType) {
           date={postData.date}
         />
         <Divider />
-        <ReactMarkdown 
-          source={postData.content}
-          className='blog-post'
-          renderers={{ 
-            code: codeRenderer,
-            text: textRenderer,
-            link: linkRenderer
-          }}
-          transformImageUri={transformImageUri}
+        <MarkdownRenderer 
+          content={postData.content}
         />
       </article>
+      <ShareLinks />
     </SiteLayout>
   )
 }

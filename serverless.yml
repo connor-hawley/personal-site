@@ -1,0 +1,4 @@
+personal-website-refactor:
+  component: "@sls-next/serverless-component@1.15.1"
+  inputs:
+    domain: "connorhawley.com"

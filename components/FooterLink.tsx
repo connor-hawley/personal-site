@@ -3,13 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Link from './StyledLink'
 
-interface FooterLinkType {
-  icon: any,
-  url: string,
-  label: string
+type FooterLink = {
+  icon: any;
+  url: string;
+  label: string;
 }
 
-export default ({ icon, url, label }: FooterLinkType) => (
+export default ({ icon, url, label }: FooterLink) => (
   <Box
     m={1}
   >

@@ -1,7 +1,11 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import remark from 'remark'
+import unified from 'unified'
+import markdown from 'remark-parse'
+import stringify from 'remark-stringify'
+import math from "remark-math";
+// import remark from 'remark'
 // import html from 'remark-html'
 
 const postsDirectory = path.join(process.cwd(), 'content/posts')
@@ -55,8 +59,11 @@ export async function getPostData(id: string) {
   const matterResult = matter(fileContents)
 
   // Use remark to process markdown content as a string
-  const processedContent = await remark()
-    .process(matterResult.content)
+  const processedContent = await unified()
+    .use(markdown)
+    .use(stringify)
+    .use(math)
+    .process(matterResult.content);
   const content = processedContent.toString()
 
   // Combine the data with the id and contentHtml
