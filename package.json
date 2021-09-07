@@ -24,7 +24,7 @@
     "react-syntax-highlighter": "^12.2.1",
     "rebass": "^4.0.7",
     "remark": "^12.0.0",
-    "remark-html": "^11.0.2",
+    "remark-html": "^13.0.2",
     "remark-math": "^2.0.1",
     "remark-parse": "^8.0.2",
     "remark-stringify": "^8.1.0",
